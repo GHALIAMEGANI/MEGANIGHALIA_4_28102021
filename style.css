@@ -726,7 +726,7 @@ p {
   font-family: "Open Sans";
 }
 
-.cta-hero {
+.cta-hero .cta-go {
   margin-top: 22px;
   color: #ffffff !important;
   text-transform: uppercase;
@@ -866,7 +866,9 @@ h4 {
   background-image: url("img/image-de-presentation.webp");
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+/* device n'est pas correct */
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (-webkit-min-pixel-ratio: 1.5) {
   .b-parallax {
     background-attachment: scroll;
   }
@@ -888,7 +890,7 @@ h4 {
 
 /* Orientation */
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .b-parallax {
     background-attachment: scroll;
   }
@@ -916,8 +918,6 @@ h4 {
     position: relative;
   }
   .bloc {
-    padding-left: constant(safe-area-inset-left);
-    padding-right: constant(safe-area-inset-right);
   }
   .bloc-group,
   .bloc-group .bloc {
@@ -927,10 +927,15 @@ h4 {
   .bloc-fill-screen .fill-bloc-top-edge,
   .bloc-fill-screen .fill-bloc-bottom-edge {
     padding: 0 20px;
-    padding-left: constant(safe-area-inset-left);
-    padding-right: constant(safe-area-inset-right);
   }
 }
+
+/* La safe area consiste en 4 valeurs 
+(safe-area-inset-top, safe-area-inset-right, safe-area-inset-bottom, safe-area-inset-left) 
+définissant une zone sur l'écran dans laquelle du contenu peut y être affiché. 
+Ceci est devenu nécessaire depuis la sortie de l'iPhone X (et d'autres ayant suivis la tendance) 
+et les fameux notchs. Ces valeurs n'entrent pas encore officiellement 
+comme spécification W3C, mais sont néanmoins */
 
 @media (max-width: 767px) {
   .page-container {
